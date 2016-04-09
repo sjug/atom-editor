@@ -1,0 +1,12 @@
+diff -aur atom-1.6.2/package.json "atom-1.6.2 fix/package.json"
+--- atom-1.6.2/package.json	2016-04-01 17:55:52.000000000 -0400
++++ "atom-1.6.2 fix/package.json"	2016-04-08 22:09:39.136201557 -0400
+@@ -37,7 +37,7 @@
+     "less-cache": "0.23",
+     "line-top-index": "0.2.0",
+     "marked": "^0.3.4",
+-    "nodegit": "0.12.0",
++    "nodegit": "0.12.2",
+     "normalize-package-data": "^2.0.0",
+     "nslog": "^3",
+     "oniguruma": "^5",

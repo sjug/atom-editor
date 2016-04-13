@@ -7,7 +7,7 @@
 
 pkgname=atom-editor
 pkgver=1.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Chrome-based text editor from Github'
 arch=('x86_64' 'i686')
 url='https://github.com/atom/atom'
@@ -19,6 +19,8 @@ conflicts=('atom-editor-bin' 'atom-editor-git')
 install=atom.install
 source=("https://github.com/atom/atom/archive/v${pkgver}.tar.gz")
 sha256sums=('1629c6688bccf7180482b4b5ccacf0d68d9b33172007d2c05c6458da80be046a')
+source_i686=("patch")
+sha256sums_i686=('4a1a761f2bdd2cca5527c00672ad262d023b43b55ced98a07ee88db8e4f75695')
 
 prepare() {
   cd "atom-$pkgver"
@@ -31,6 +33,10 @@ prepare() {
     -e "s|<%= installDir %>/share/<%= appFileName %>|/usr/bin|"\
     -e "s|<%= iconPath %>|atom|"\
     resources/linux/atom.desktop.in > resources/linux/Atom.desktop
+
+  if [[ "$CARCH" == "i686" ]]; then
+    patch -Np1 <${srcdir}/patch
+  fi
 }
 
 build() {

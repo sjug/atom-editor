@@ -3,7 +3,7 @@
 pkgbase = atom-editor
 	pkgdesc = Chrome-based text editor from Github
 	pkgver = 1.7.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/atom/atom
 	install = atom.install
 	arch = x86_64
@@ -26,6 +26,8 @@ pkgbase = atom-editor
 	conflicts = atom-editor-git
 	source = https://github.com/atom/atom/archive/v1.7.0.tar.gz
 	sha256sums = 1629c6688bccf7180482b4b5ccacf0d68d9b33172007d2c05c6458da80be046a
+	source_i686 = patch
+	sha256sums_i686 = 4a1a761f2bdd2cca5527c00672ad262d023b43b55ced98a07ee88db8e4f75695
 
 pkgname = atom-editor
 

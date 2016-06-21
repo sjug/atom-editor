@@ -35,6 +35,11 @@ prepare() {
     -e "s|<%= installDir %>/share/<%= appFileName %>|/usr/bin|"\
     -e "s|<%= iconPath %>|atom|"\
     resources/linux/atom.desktop.in > resources/linux/Atom.desktop
+
+  if ! [[ -d ~/.atom/.npm ]]; then
+    mkdir -p ~/.atom/.npm
+  fi
+
 }
 
 build() {
